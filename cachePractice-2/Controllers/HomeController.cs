@@ -22,9 +22,9 @@ namespace cachePractice_2.Controllers
             {
                 cacheEntry = DateTime.Now;
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
-                    .SetSlidingExpiration(TimeSpan.FromSeconds(30)) //x süresi içinde işlem yapılırsa cache kalsın, yapılmazsa cache'i düşür
-                    .SetAbsoluteExpiration(TimeSpan.FromMinutes(1)) //x dakikayı geçerse cache'i sil
-                    .SetPriority(CacheItemPriority.Normal); //atılması gereken verilere öncelik vererek atar
+                    .SetSlidingExpiration(TimeSpan.FromSeconds(30)) 
+                    .SetAbsoluteExpiration(TimeSpan.FromMinutes(1)) 
+                    .SetPriority(CacheItemPriority.Normal); 
                 _memoryCache.Set(cacheKey, cacheEntry, cacheEntryOptions);
             }
             return View(cacheEntry);
