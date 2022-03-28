@@ -1,0 +1,18 @@
+﻿@model DateTime?
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h3>Current Time:@DateTime.Now.TimeOfDay.ToString()</h3>
+        <h3>Time With Cache:@(Model==null?"No data in cache":Model.Value.TimeOfDay.ToString())</h3>
+    </div>
+</body>
+</html>
